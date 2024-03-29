@@ -1,0 +1,33 @@
+import java.util.Scanner;
+class person {
+	private String dob,name;
+	public void get_data()
+	{
+		System.out.println("enter your name and dob[DD-MM-YYYY] ");
+		Scanner sc=new Scanner(System.in);
+		name=sc.nextLine();
+		dob=sc.nextLine();
+	}
+	public int calculate_age()
+	{
+		String[] v=dob.split("-");
+		int age=2023-Integer.parseInt(v[2]);
+		return age;
+	}
+	}
+public class Voting{
+	public static void main(String[] args)
+	{
+		person p= new person();
+		p.get_data();
+		int age =p.calculate_age();
+		if(age>=18)
+		{
+			System.out.println("Eligeble for Vote");
+		}
+		else
+		{
+			System.out.println("not Eligibke for Vote");
+		}
+	}
+}
